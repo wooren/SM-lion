@@ -1,9 +1,49 @@
 let num = 1;
+let num = 1;
 
 let eiTypeScore = 0;
 let snTypeScore = 0;
 let tfTypeScore = 0;
 let jpTypeScore = 0;
+
+
+
+function shareMessage() {
+    if (!Kakao.isInitialized()) Kakao.init('3948e3c1cc1896a9fd134e5e19df9c68');
+    
+    Kakao.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: '아기사자 mbti 테스트',
+          description: 'mbti기반으로 알아보는 성격테스트',
+          imageUrl:
+            './img/ENFP',
+          link: {
+            mobileWebUrl: 'https://resplendent-truffle-80cbc4.netlify.app',
+            webUrl: 'https://resplendent-truffle-80cbc4.netlify.app',
+          },
+        },
+        social:{
+            likeCount: 523,
+            commentCount: 513,
+            sharedCount:987,
+        },
+        buttons: [
+            {
+                title: "웹으로 이동",
+                link: {
+                    webUrl:"https://resplendent-truffle-80cbc4.netlify.app"
+                },
+            },
+            {
+                title: "앱으로 이동",
+                link:{
+                    mobileWebUrl:"https://resplendent-truffle-80cbc4.netlify.app"
+                },
+            },
+        ],
+    });
+}
 
 function next() {
     $(".progress-bar").attr("style", "width: calc(100 / 12 *" + num + "%)");
@@ -75,4 +115,4 @@ $("#A").click(function() {
         console.log("err", err);
       });
     document.body.removeChild(dummy);
-  }
+    }
