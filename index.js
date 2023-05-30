@@ -1,5 +1,4 @@
 let num = 1;
-let num = 1;
 
 let eiTypeScore = 0;
 let snTypeScore = 0;
@@ -74,7 +73,7 @@ $("#A").click(function() {
     
       $(".subtitle").html(result[mbti]["subtitle"]);
       $(".explain").html(result[mbti]["explain"]);
-      $("#result_img").attr("src", result[mbti]["img"]);
+      $("#result_img").attr("src", result[mbti]["png"]);
     } else { 
       next(); 
     }
